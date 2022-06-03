@@ -153,3 +153,253 @@ This test pushes an application beyond normal load conditions to determine which
 
 6. Scalability Testing
 This testing is used to determine your application’s ability to handle increasing amounts of load and processing. It involves measuring attributes including response time, throughput, hits and requests per second, transaction processing speed, CPU usage, Network usage and more.
+
+### Day6: 2 March 2022
+## INSTALLATION OF SQL
+Step 1:
+
+Download installation media from this link:
+microsoft.com/en-us/sql-server/sql-server-downloads
+
+Step 2:
+
+Run the downloaded file and you will see the below screen. Now select the third option – Download Media.
+![image](https://user-images.githubusercontent.com/52241202/171843703-bd35b9c4-db60-4d0b-b23a-a47e48c66f29.png)
+
+Step 3:
+
+Now you will see the below screen. Please select the language you prefer and select the ISO radio button to download the ISO file. In addition, select the download location of your choice. I will go with the default location. Now press the Download button.
+![image](https://user-images.githubusercontent.com/52241202/171843928-c0a36cad-9402-4000-90c9-2df841c7f660.png)
+
+Step 4:
+
+Now it will start downloading SQL Server installation media. It will take some time based on your internet connection speed.
+
+Step 5:
+
+After successful download of installation media. Click the Close button.
+
+### Day7: 3 March 2022
+## Basics of SQL
+
+what is database?
+A database is an organized collection of data, so that it can be easily accessed and managed.You can organize data into tables, rows, columns, and index it to make it easier to find relevant information.
+
+what is SQL?
+SQL or Structured Query Language is used to operate on the data stored in a database.
+
+what is RDBMS?
+A relational database management system (RDBMS or just RDB) is a common type of database that stores data in tables, so it can be used in relation to other stored datasets.
+
+What is table?
+The data in RDBMS is stored in database objects called tables. The table is a collection of related data entries
+and it consists of columns and rows.
+
+What is field?
+Every table is broken up into smaller entities called fields.
+A field is a column in a table that is designed to maintain specific information about every record in the table.
+
+What is record or row?
+A record, also called a row of data, is each individual entry that exists in a table.A record is a horizontal entity in a table.
+
+What is column?
+A column is a vertical entity in a table that contains all information associated with a specific field in a table.
+
+What is NULL value?
+A NULL value in a table is a value in a field that appears to be blank, which means a field with a NULL value is a
+field with no value.
+
+### Day8: 4 March 2022
+## Basic Commands in SQL
+
+These SQL commands are mainly categorized into four categories as: 
+
+- DDL – Data Definition Language
+- DQl – Data Query Language
+- DML – Data Manipulation Language
+- DCL – Data Control Language
+
+1.List of DDL commands: 
+
+- CREATE: This command is used to create the database or its objects (like table, index, function, views, store procedure, and triggers).
+- DROP: This command is used to delete objects from the database.
+- ALTER: This is used to alter the structure of the database.
+- TRUNCATE: This is used to remove all records from a table, including all spaces allocated for the records are removed.
+- COMMENT: This is used to add comments to the data dictionary.
+- RENAME: This is used to rename an object existing in the database.
+
+2.List of DQL: 
+
+- SELECT: It is used to retrieve data from the database.
+
+3.List of DML commands: 
+
+- INSERT : It is used to insert data into a table.
+- UPDATE: It is used to update existing data within a table.
+-DELETE : It is used to delete records from a database table.
+
+4.List of  DCL commands: 
+
+- GRANT: This command gives users access privileges to the database.
+- REVOKE: This command withdraws the user’s access privileges given by using the GRANT command.
+
+### Day9: 7 March 2022
+## Data Types in sql
+
+- NUMERIC DATA TYPE:
+  - int
+  - float
+  - decimal
+- NON-NUMERIC DATA TYPE:
+  - char
+  - varchar
+  - ENUM
+  - Boolean
+- DATA AND TIME DATA TYPE:
+   - TIME: Time(HHH-MM-SS)
+   - YEAR: Year(YYYY)
+
+### Day10: 8 March 2022
+## Keys Concept:
+Primary key and foreign key
+
+- Primary key:
+It is the first key used to identify one and only one instance of an entity uniquely.
+- Foreign key:
+Foreign keys are the column of the table used to point to the primary key of another table.
+- Super Key:
+Super key is an attribute set that can uniquely identify a tuple. A super key is a superset of a candidate key.
+-  Candidate key:
+A candidate key is an attribute or set of attributes that can uniquely identify a tuple.
+Except for the primary key, the remaining attributes are considered a candidate key. The candidate keys are as strong as the primary key.
+-  Alternate key
+There may be one or more attributes or a combination of attributes that uniquely identify each tuple in a relation. These attributes or combinations of the attributes are called the candidate keys. One key is chosen as the primary key from these candidate keys, and the remaining candidate key, if it exists, is termed the alternate key.
+- Composite key
+Whenever a primary key consists of more than one attribute, it is known as a composite key. This key is also known as Concatenated Key.
+- Artificial key
+The key created using arbitrarily assigned data are known as artificial keys. These keys are created when a primary key is large and complex and has no relationship with many other relations.
+
+### Day11: 9 March 2022
+## SQL clauses:
+- CONSTRAINT clause:
+A CONSTRAINT clause is an optional part of a CREATE TABLE statement or an ALTER TABLE statement. A constraint is a rule to which data must conform. Constraint names are optional.
+
+- FOR UPDATE clause:
+The FOR UPDATE clause is an optional part of a SELECT statement.
+
+- FROM clause:
+The FROM clause is a mandatory clause in a selectExpression.
+
+- GROUP BY clause:
+A GROUP BY clause, part of a selectExpression, groups a result into subsets that have matching values for one or more columns.
+
+- HAVING clause:
+A HAVING clause restricts the results of a GROUP BY in a selectExpression.
+
+- ORDER BY clause:
+The ORDER BY clause is an optional element of several statements, expressions, and subqueries.
+
+- USING clause:
+The USING clause specifies which columns to test for equality when two tables are joined.
+
+- WHERE clause:
+A WHERE clause is an optional part of a selectExpression, DELETE statement, or UPDATE statement. The WHERE clause lets you select rows based on a boolean expression.
+
+### Day12: 10 March 2022
+## SQL Functions
+SQL has many built-in functions for performing processing on string or numeric data. Following is the list of
+all useful SQL built-in functions:
+1. SQL COUNT Function - The SQL COUNT aggregate function is used to count the number of rows in a
+database table.<br>
+SELECT COUNT(*) FROM <Tablename>;
+
+2. SQL MAX Function - The SQL MAX aggregate function allows us to select the highest (maximum) value for a
+certain column.<br>
+SELECT MAX(*) FROM <Tablename>;
+
+3. SQL MIN Function - The SQL MIN aggregate function allows us to select the lowest (minimum) value for a
+certain column.<br>
+SELECT MIN(*) FROM <Tablename>;
+
+4. SQL AVG Function - The SQL AVG aggregate function selects the average value for certain table column.<br>
+SELECT AVG(*) FROM <Tablename>;
+
+5. SQL SUM Function - The SQL SUM aggregate function allows selecting the total for a numeric column.<br>
+SELECT SUM(*) FROM <Tablename>;
+
+6. SQL SQRT Functions - This is used to generate a square root of a given number.<br>
+select SQRT(16);
+
+7. SQL RAND Function - This is used to generate a random number using SQL command.<br>
+ SELECT RAND( ), RAND( ), RAND( );
+
+8. SQL CONCAT Function - This is used to concatenate any string inside any SQL command.<br>
+SELECT CONCAT('FIRST ', 'SECOND');
+
+9. SQL Numeric Functions - Complete list of SQL functions required to manipulate numbers in SQL.
+
+10. SQL String Functions - Complete list of SQL functions required to manipulate strings in SQL.
+  
+### Day13: 11 March 2022
+## TABLES
+  
+- The CREATE TABLE statement is used to create a new table in a database.<br>
+Syntax:<br>
+CREATE TABLE table_name (<br>
+    column1 datatype,<br>
+    column2 datatype,<br>
+    column3 datatype,<br>
+   ....<br>
+);
+
+- Create Table Using Another Table i.e A copy of an existing table can also be created using CREATE TABLE.<br>
+Syntax:<br>
+CREATE TABLE new_table_name AS <br>
+    SELECT column1, column2,... <br>
+    FROM existing_table_name <br>
+    WHERE ....;
+    
+- The DROP TABLE statement is used to drop an existing table in a database.<br>
+Syntax:<br>
+DROP TABLE table_name;
+
+- The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.<br>
+Syntax:<br>
+ALTER TABLE table_name<br>
+ADD column_name datatype;
+  
+### Day14: 14 March 2022
+## SQL Constraints:
+Constraints are the rules enforced on data columns on table.<br>
+Following are commonly used constraints available in SQL:
+1. NOT NULL Constraint: Ensures that a column cannot have NULL value.
+2. DEFAULT Constraint: Provides a default value for a column when none is specified.
+3. UNIQUE Constraint: Ensures that all values in a column are different.
+4. PRIMARY Key: Uniquely identified each rows/records in a database table.
+5. FOREIGN Key: Uniquely identified a rows/records in any another table.
+  
+### Day15: 15 March 2022
+## SQL SUBQUERY:
+In SQL a Subquery can be simply defined as a query within another query. In other words we can say that a Subquery is a query that is embedded in WHERE clause of another SQL query.<br>
+
+Important rules for Subqueries:
+
+- You can place the Subquery in a number of SQL clauses: WHERE clause, HAVING clause, FROM clause.
+- Subqueries can be used with SELECT, UPDATE, INSERT, DELETE statements along with expression operator. It could be equality operator or comparison operator such as =, >, =, <= and Like operator.
+- A subquery is a query within another query. The outer query is called as main query and inner query is called as subquery.
+- The subquery generally executes first, and its output is used to complete the query condition for the main or outer query.
+- Subquery must be enclosed in parentheses.
+- Subqueries are on the right side of the comparison operator.
+- ORDER BY command cannot be used in a Subquery. GROUPBY command can be used to perform same function as ORDER BY command.
+- Use single-row operators with singlerow Subqueries. Use multiple-row operators with multiple-row Subqueries.
+
+Syntax:<br>
+SELECT column_name<br>
+FROM table_name<br>
+WHERE column_name expression operator<br> 
+    ( SELECT COLUMN_NAME  from TABLE_NAME   WHERE ... );
+  
+### Day16: 16 March 2022
+## SQL ASSESSMENT
+                                                                                                                    
+          

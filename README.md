@@ -689,6 +689,79 @@ Some of the examples of checked exceptions are:
 - Trying to open a file that doesn’t exist results in FileNotFoundException
 - Trying to read past the end of a file
   
+**Java try...catch block:** <br>
+The try-catch block is used to handle exceptions in Java.<br>
+ 
+Here's the syntax of try...catch block: <br>
+try { <br>
+  // code <br>
+} <br>
+catch(Exception e) { <br>
+  // code <br>
+} <br>
+
+**Java finally block:** <br>
+In Java, the finally block is always executed no matter whether there is an exception or not. The finally block is optional. And, for each try block, there can be only one finally block.<br>
+ 
+The basic syntax of finally block is: <br>
+try { <br>
+  //code <br>
+} <br>
+catch (ExceptionType1 e1) {  <br>
+  // catch block <br>
+} <br>
+finally { <br>
+  // finally block always executes <br>
+} <br>
+
+**Java throw and throws keyword:** <br>
+The Java throw keyword is used to explicitly throw a single exception.When we throw an exception, the flow of the program moves from the try block to the catch block. <br>
+ 
+Example: Exception handling using Java throw <br>
+class Main { <br>
+  public static void divideByZero() { <br>
+
+    // throw an exception <br>
+    throw new ArithmeticException("Trying to divide by 0"); <br>
+  } <br>
+
+  public static void main(String[] args) { <br>
+    divideByZero(); <br>
+  } <br>
+} <br>
+ 
+Syntax of **Nested try Catch...**<br>
+//Main try block <br>
+try { <br>
+   statement 1; <br>
+   statement 2; <br>
+   //try-catch block inside another try block <br>
+   try { <br>
+      statement 3; <br>
+      statement 4; <br>
+      //try-catch block inside nested try block <br>
+      try { <br>
+         statement 5; <br>
+         statement 6; <br>
+      } <br>
+      catch(Exception e2) { <br>
+         //Exception Message <br>
+      } <br>
+   } <br>
+   catch(Exception e1) { <br>
+       //Exception Message <br>
+   } <br>
+   
+} <br>
+//Catch of Main(parent) try block <br>
+catch(Exception e3) { <br>
+      //Exception Message  <br>
+}  <br>
+....  <br>
+  
+### Day22: 25 March 2022
+## JAVA ASSESSMENT
+  
   
 
 

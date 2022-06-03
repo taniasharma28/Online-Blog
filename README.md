@@ -589,6 +589,107 @@ Hiding internal details and showing functionality is known as abstraction. For e
 - Encapsulation: <br>
 Binding (or wrapping) code and data together into a single unit are known as encapsulation. For example, a capsule, it is wrapped with different medicines.
   
+### Day19: 22 March 2022
+## IMPORTANT CONCEPTS
+- ARRAY: <br>
+An array in Java is a linear and homogeneous collection of the same type of elements. In array, there is contiguous memory allocation. An array is basically a group of similar variables referred under a common name. An array is a user-defined data type. <br>  
+Syntax of array: <br>
+int intArray[];  //declaring array <br>
+intArray = new int[20];  // allocating memory to array <br>  
+There are two types of arrays in Java:
+   - One-dimensional arrays
+   - Multi-dimensional arrays <br>
+  
+- STRING:<br>
+There are many ways to create a string object in java, some of the popular ones are given below.<br> 
+   - Using string literal <br> 
+    String str = "abc"; 
+
+   - Using new keyword <br> 
+    String str  =  new String("abc"); <br> 
+    char[] a = {'a', 'b', 'c'}; <br> 
+    String str2  =  new String(a); <br>
+  
+- CONSTRUCTOR: <br>
+A Constructor in Java is a block of code that creates an object. Therefore, it is also called an object builder in Java. The constructor is very similar to a Java method. The main difference between them is that a constructor does not have a return type, not even void, unlike methods. <br>  
+There are two types of constructors in Java:
+  - Default constructor
+  - Parameterized constructor
+
+- METHOD OVERRIDING: <br>
+In method overriding, the child class can use the OOP polymorphism concept to override a method of its parent class. That allows a programmer to use one method in different ways depending on whether it’s invoked by an object of the parent class or an object of the child class.
+- METHOD OVERLOADING: <br>
+In method overloading, a single method may perform different functions depending on the context in which it’s called. This means a single method name might work in different ways depending on what arguments are passed to it.
+
+- INTERFACE: <br>
+A collection of abstract behavior specifications that individual classes can then implement.<br>
+Syntax: <br>
+interface < interfaceName > { <br>
+  //static functions <br>
+  //abstract methods <br>
+} <br>
+- PACKAGE: <br>
+ A collection of classes and interfaces. Classes from packages other than java.lang must be explicitly imported or referred to by full package name.
+  
+### Day20: 23 March 2022
+## Keywords
+- Static keyword: <br>
+   - The static keyword in java is used for memory management mainly.
+   - Static member of class belongs to class itself instead of the class object.
+   - Constructor cannot be static.
+   - A static variable gets memory only once in the class area at the time of class loading.
+- This keyword: <br>
+This keyword in Java is a reference variable that refers to the current object of a method or a constructor. The main purpose of using this keyword in Java is to remove the confusion between class attributes and parameters that have same names. <br>
+Following are various uses of ‘this’ keyword in Java: <br>
+   - It can be used to refer instance variable of current class
+   - It can be used to invoke or initiate current class constructor
+   - It can be passed as an argument in the method call
+   - It can be passed as argument in the constructor call
+   - It can be used to return the current class instance.
+- Final keyword: <br>
+The final keyword in java is used to restrict the user.
+    - Java final variable
+      If you make any variable as final, you cannot change the value of final variable(It will be constant).
+    - Java final method
+      If you make any method as final, you cannot override it.
+    - Java final class
+ If you make any class as final, you cannot extend it.
+
+- Super keyword: <br>
+The super keyword in Java is used in subclasses to access superclass members (attributes, constructors and methods). <br>
+Uses of super keyword-
+   - To call methods of the superclass that is overridden in the subclass.
+   - To access attributes (fields) of the superclass if both superclass and subclass have attributes with the same name.
+   - To explicitly call superclass no-arg (default) or parameterized constructor from the subclass constructor.
+  
+### Day 21: 24 March 2022
+## EXCEPTIONAL HANDLING
+Java Exceptions: <br>
+An exception is an unexpected event that occurs during program execution. It affects the flow of the program instructions which can cause the program to terminate abnormally. <br>
+An exception can occur for many reasons. Some of them are:
+- Invalid user input
+- Device failure
+- Loss of network connection
+- Physical limitations (out of disk memory)
+- Code errors
+- Opening an unavailable file<br>
+  
+Java Exception Types:
+1. RuntimeException <br>
+A runtime exception happens due to a programming error. They are also known as unchecked exceptions. <br>
+These exceptions are not checked at compile-time but run-time.<br>
+Some of the common runtime exceptions are:
+- Improper use of an API - IllegalArgumentException
+- Null pointer access (missing the initialization of a variable) - NullPointerException
+- Out-of-bounds array access - ArrayIndexOutOfBoundsException
+- Dividing a number by 0 - ArithmeticException
+2. IOException <br>
+An IOException is also known as a checked exception. They are checked by the compiler at the compile-time and the programmer is prompted to handle these exceptions. <br>
+Some of the examples of checked exceptions are:
+- Trying to open a file that doesn’t exist results in FileNotFoundException
+- Trying to read past the end of a file
+  
+  
 
 
 

@@ -401,5 +401,200 @@ WHERE column_name expression operator<br>
   
 ### Day16: 16 March 2022
 ## SQL ASSESSMENT
+  
+### Day17: 17 March 2022
+## BASIC JAVA PROGRAMMING
+
+What is Java?<br>
+Java is a popular programming language, created in 1995.<br>
+It is owned by Oracle, and more than 3 billion devices run Java.<br>
+
+It is used for:
+
+- Mobile applications (specially Android apps)
+- Desktop applications
+- Web applications
+- Web servers and application servers
+- Games
+- Database connection
+- And much, much more!
+
+Why Use Java?<br>
+- Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)
+- It is one of the most popular programming language in the world
+- It is easy to learn and simple to use
+- It is open-source and free
+- It is secure, fast and powerful
+- It has a huge community support (tens of millions of developers)
+- Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs
+- As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa
+
+Java Syntax:
+- Main.java
+
+public class Main {<br>
+  public static void main(String[] args) {<br>
+    System.out.println("Hello World");<br>
+  }<br>
+}
+
+- The main Method
+
+public static void main(String[] args)
+
+- System.out.println()
+
+public static void main(String[] args) {<br>
+  System.out.println("Hello World");
+}
+
+Java Variables:<br>
+A variable is a container which holds the value while the Java program is executed.<br>
+A variable is the name of a reserved area allocated in memory. In other words, it is a name of the memory location. It is a combination of "vary + able" which means its value can be changed.<br>
+
+Types of Variables:<br>
+There are three types of variables in Java:
+  
+- Local Variable
+A variable declared inside the body of the method is called local variable. You can use this variable only within that method and the other methods in the class aren't even aware that the variable exists.<br>
+
+A local variable cannot be defined with "static" keyword.<br>
+
+- Instance Variable
+A variable declared inside the class but outside the body of the method, is called an instance variable. It is not declared as static.<br>
+
+- Static variable
+A variable that is declared as static is called a static variable. It cannot be local. You can create a single copy of the static variable and share it among all the instances of the class. Memory allocation for static variables happens only once when the class is loaded in the memory.<br>
+  
+DATA TYPES:<br>
+Java defines eight simple (or elemental) types of data: byte, short, int, long, char, float,double,
+and boolean. <br>
+These can be put in four groups:
+- Integers: This group includes byte, short, int, and long, which are for whole valued signed numbers.
+- Floating point numbers: This group includes float and double, which represent numbers with fractional precision.
+- Characters: This group includes char, which represents symbols in a character set, like letters and numbers.
+- Boolean: This group includes boolean, which is a special type for representing true/false values.
+  
+### Day18: 21 March 2022
+## CONDITIONAL,LOOPS And OOPS CONCEPTS
+ 
+Conditional Statements:<br>
+
+- if:<br>
+if(condition) <br>
+{<br>
+   // Statements to execute if<br>
+   // condition is true<br>
+}<br>
+
+- if-else:<br>
+if (condition)<br>
+{<br>
+    // Executes this block if<br>
+    // condition is true<br>
+}<br>
+else<br>
+{<br>
+    // Executes this block if<br>
+    // condition is false<br>
+}<br>
+
+- Nested if-else-if:<br>
+if (condition)<br>
+    statement;<br>
+else if (condition)<br>
+    statement;<br>
+.<br>
+.<br>
+else<br>
+    statement;<br>
+
+- Switch:<br>
+switch (expression)<br>
+{<br>
+  case value1:<br>
+    statement1;<br>
+    break;<br>
+  case value2:<br>
+    statement2;<br>
+    break;<br>
+  .<br>
+  .<br>
+  case valueN:<br>
+    statementN;<br>
+    break;<br>
+  default:<br>
+    statementDefault;<br>
+}<br>
+
+- Break:<br>
+In Java, a break is majorly used for:<br> 
+Terminate a sequence in a switch statement (discussed above).<br>
+To exit a loop.<br>
+Used as a “civilized” form of goto.<br>
+
+- Continue:<br>
+Sometimes it is useful to force an early iteration of a loop. That is, you might want to continue running the loop but stop processing the remainder of the code in its body for this particular iteration.<br>
+
+- Return:<br> 
+The return statement is used to explicitly return from a method. That is, it causes program control to transfer back to the caller of the method.<br>
+
+LOOPS:<br>
+- For loop:  
+for(initializing statement;testing condition;increment/decrement) <br>
+{ <br>
+//code to be iterated <br>
+} <br>
+
+- While:  
+while(boolean condition) <br>
+{ <br>
+//statements; <br>
+} <br>
+
+- Do-While:  
+do{   <br>
+//code to be executed / loop body   <br>
+//update statement    <br>
+}while (condition); <br>
+  
+OOPS CONCEPT:<br>
+The primary purpose of object-oriented programming is to increase the flexibility and maintainability of programs.<br>
+- Class:<br>
+A class is a template for multiple objects with similar features. Classes embody all the features of a particular set of objects.<br>
+class MyClassName {<br>
+...<br>
+
+- Object:<br>
+An object in java is an identifiable entity that has some characteristics and behavior. We create objects from class in Java.<br>
+< className > <objectName > =new < className> ();<br>
+Object in Java can be created in any of the following ways using:<br>
+  - new operator<br>
+  - new instance<br>
+  - clone() method<br>
+  - deserialization<br>
+
+- Polymorphism: <br>
+It is an important concept of object-oriented programming. It simply means more than one form.
+That is, the same entity (method or operator or object) can perform different operations in different scenarios.
+  
+- Inheritance: <br>
+It is one of the key features of OOP that allows us to create a new class from an existing class.
+It is one of the key features of OOP that allows us to create a new class from an existing class.
+The new class that is created is known as subclass (child or derived class) and the existing class from where the child class is derived is known as superclass (parent or base class).
+  
+- Abstraction: <br>
+Hiding internal details and showing functionality is known as abstraction. For example phone call, we don't know the internal processing.
+  
+- Encapsulation: <br>
+Binding (or wrapping) code and data together into a single unit are known as encapsulation. For example, a capsule, it is wrapped with different medicines.
+  
+
+
+
+
+
+  
+
                                                                                                                     
           

@@ -1634,8 +1634,267 @@ ${VARIABLE} <br>
 ### Day 46: 29 April 2022
 ## DOUBT CLARIFICATION SESSION WITH INSTRUCTOR
  
+### Day 47: 2 May 2022
+## Basics of PT execution
+
+What is Performance Test Execution? <br>
+Performance Test Execution word refers to run the tests specific to performance testing like load test, soak test, stress test, spike test etc. using performance testing tool. Performance Test Plan contains detailed information of all these tests which need to be executed in the performance testing window. Basically, this phase has two sub-phases:
+
+- Test Execution: To run the planned performance tests
+- Result Analysis: To analyse the test result and prepare an interim test report
+Purpose: <br>
+Performance Test execution phase has the following activities to be performed: <br>
+
+Execute the documented/agreed performance test <br>
+- Analyse the performance test result
+- Verify the result against defined NFRs 
+- Prepare an Interim Performance Test Report
+- Take the decision to complete or repeat the test cycle based on the interim test result
+
+Approach for Test Execution: <br>
+Pre-execution activities: <br>
+Before starting the test execution there are few pre-requisite which a performance tester should follow. He must pay attention to the below points: <br>
+
+- Verify all the performance test scripts locally
+- Validate all the scenarios
+- Check all the external file path in the test script. The file path should match with the file location available at load generator
+- Check whether load generator and controller have sufficient disk space
+- Reboot the controllers and all the load generators (if feasible)
+- All the performance tests should run on the latest code of the application
+- The performance test environment should have the QA (functional test) passed version code only so that application is free from any functional bug
+- Verify the script on load generator by running a smoke test before starting the actual load test
+- Verify all the test data (if feasible) so that there is no failure in the test due to the test data issue
+- Restart Web/Application/Database servers before starting a test
+- Perform server logs clean-up activity
+- Conduct a quick Healthcheck to verify the stability of the environment
+- Verify whether all the required monitors are up and running
+- Validate the run-time setting and parameter files
+- If the test is scheduled then check the system time must be synced with the testing tool time so that test can be started at the correct time.
+- After verifying all the check-points, a performance tester can press the ‘Run’ button to start the test.
+
+Test Execution: <br>
+Once the test starts then check the graphs and stats in the live monitors of the testing tool. A performance tester needs to pay attention to some basic metrics like active users, transactions per second, hits per second, throughput, error count, error type etc. Also, he needs to check the behaviour of the users against the defined workload. At last, the test should stop properly and the result should be collated correctly at the given location. <br> 
+
+Post-execution activities: <br>
+Once a performance test completes then a performance tester collects the result and starts the result analysis which acts as a post-execution activity. A performance tester should follow the below approach to conduct the performance test result analysis. <br> 
 
 
+Pre-result analysis activities: <br>
+Before starting the performance test result analysis, a performance tester should follow these important points: <br>
+
+-  test should run for the defined duration
+- Filter-out the ramp-up and ramp-down duration
+- Eliminate ‘Think Time’ from the graphs/stats
+- Eliminate ‘Pacing’ (if the tool counts) from the graphs/stats
+- No tool specific error should occur like the failure of load generator, memory issue etc.
+- No network related issue should occur during the test like network failure, LGs become disconnected from network etc.
+- The testing tool should collect the results from all the load generators and prepare a combine test report
+- CPU and Memory utilization percentage should be noted down for pre-test (at least 1 hour), post-test (at least 1 hour) and during the test.
+- Use proper granularity to identify correct peaks and lows
+- Use filter option and eliminate the unwanted transactions (if any)
+
+Result Analysis: <br>
+Start the analysis with some basic metrics like <br>
+- Number of Users: The actual load during steady state should meet the user load NFR
+- Response Time: The actual response during steady state should meet the response time NFR. The response time should be measured at two levels – Individual transaction response time and end-to-end response time. If NFRs are available for both the levels then they should meet
+- Transactions per second / Iterations per hour: If any of these metrics is defined then the actual result should match with the defined figure
+- Throughput: Throughput should match (not apple-to-apple) for the same set of tests
+- Error: The error count should be less than the defined error tolerance limit
+- Passed Transaction counts: Ideally, the passed count of the first transaction should match with the passed count of the last transaction. If it is not the case then identify the failed transactions
+Analyse the graphs: 
+- Set the proper granularity for all the graphs
+- Read the graph carefully and note down the points
+- Check the spikes and lows in the graph
+- Merge the different graphs to identify the root cause of the issue
+- If performance testing tool and monitoring tool are not integrated then note the time when the error occurred and sync the graphs generated by both the tools
+- Do not extrapolate the result on the basis of incomplete statistics
+Analyse the other reports:
+- Generate the heap dump and analyse the Java heap during the test
+- Perform thread dump analyse to check the deadlock or stuck thread
+- Analyse the Garbage Collector logs
+- Analyse the AWR report to find a long time taking DB query.
+
+Post-result analysis activities: <br>
+A performance tester gathers all the result i.e. client side and server side stats and starts analysing the result. He verifies the results against the defined NFRs. After each test, performance tester prepares an interim test report which is analysed by a Performance Test Lead or Manager. <br> 
+
+Some key points for reporting:
+
+- It is good practice to generate an individual test report for all the tests
+- Define a template for test report and use the same template to generate the report
+- Highlight the observations and defects in the test report
+- If performance testing tool does not have reporting feature then prepare an interim test report (template link is available in the deliverable section of this post)
+- Attach all the relevant reports like heap dump analysis report, AWR report etc. with the interim test report
+- Provide defect description along with defect ID
+- Conclude the result as Pass or Fail status
+- Along with result if a performance tester detects any performance bottleneck then he raises the defect and assigns to the respective team for further investigation on the root cause. The root cause analysis activity is basically a team effort wherein the performance tester, system administrators, technical experts and DBA play a vital role. The test execution and bottleneck analysis activities are cyclic in nature.
+
+### Day 48: 4 May 2022
+## Terminologies in Jmeter:-
+- Test Plan
+- ThreadGroup
+- Samplers
+- Listeners
+- WorkBench
+- Assertions
+- Config Element
+- Logic Controllers
+- Timer
+
+a)Test Plan <br>
+Just as a simple test plan in Software Testing consists of all steps which execute the script, JMeter’s Test plan has the same purpose. Everything which is included in a test plan is executed in a sequence which is top to bottom or as per the defined sequence in the test plan. <br>
+
+Test Plan can be as simple as it could be, with Just ThreadGroup, Sampler, and Listener and it starts getting more complex as soon as you start adding more elements like config elements, preprocessors or controllers.<br>
+
+As we all know that JMeter measure performance by generating Virtual Users or Threads which hits server under test as if real users are sending requests to a server. Therefore, every Test Plan should have virtual users or Thread Group as we call them in JMeter’s terms. <br>
+
+Important Points about Test Plan:
+
+- The test plan should be saved before running
+- Jmeter files or test plans are saved in form of. JMX extension files
+- You can also save parts of Test Plan as the different selection. For example, If you want to save HTTP Request Sampler with Listener, you can save it as Test -  - - - Fragment so that it can be used in other test scenarios as well
+- Elements of WorkBench are not saved with Test Plan.
+
+b)Thread Group <br>
+Thread Group is a group of users which will be hitting the server under test either concurrently or in some predefined sequence. Thread Group can be added to Test Plan by right clicking the test plan. JMeter is all “Right Click stuff”, you get all the options on the right click. <br>
+You can rename Thread Group name to your own. Just change the name and click anywhere outside the Test Plan window, you would see the name getting changed.
+It is very important to configure your thread group as per the test conditions. <br> 
+
+Basically, there are three main parameters which must be configured to generate actual load or virtual users: <br>
+
+Number of Thread(Users) – It defines the number of virtual users. For testing purpose, we should generate only a limited amount of load as generating huge volume at once would mean consuming lot many threads which can ultimately lead to high CPU utilization. <br>
+Ramp Up Period – This field is very important in controlling the load generation. Ramp up period defined the amount of time in which the total load will be generated. <br> 
+
+c)Samplers <br>
+Loop Count – It defines the number of times Thread Group will execute. If you check the Forever check box your test will run forever unless you manually stop it. This can be used to test something like “If your server doesn’t crash on continuous load for few minutes”. <br>
+So, how does a Jmeter knows what type of request has been sent to server??? <br> 
+
+It is through Samplers. Samplers are a must to add to a Test Plan as only it can let Jmeter know what type of request need to go to which server and with any predefined parameters or not. Requests could be HTTP, HTTP(s), FTP, TCP, SMTP, SOAP etc. <br>
+Samplers can only be added to Thread Group not directly under Test Plan as Thread Groups need to use a sampler to send a request to server URL under test. The sampler can be added by path Thread Group -> Sampler -> HTTP Request. <br>  
+
+HTTP Requests- <br>
+These are the most common requests sent to the servers. <br> 
+
+FTP Requests- <br>
+Path-> Test Plan-> Thread Group-> Sampler-> FTP Request <br> 
+
+FTP stands for File Transfer Protocol and it is used to upload or download a file from the server. JMeter’s threads send requests to FTP servers to upload or download files from there and measures the performance. <br> 
+
+d)Listeners <br>
+Listeners are used to display the results of test execution so that testers get to know the stats. We have around 15 listeners in Jmeter but mostly used ones are table, tree, and Graph. <br> 
+
+View Results in Table:<br> 
+
+This is the most commonly used and easily understandable form of listeners. It displays the result in form of table with some important performance parameters. <br>
+
+View Results in Tree: <br> 
+
+This is another most commonly used listeners and provides detailed information with request and response. One can also view the HTML page rendered in response apart from viewing Json, XML, Text, RegEx. <br> 
+
+e)Work Bench <br>
+A workbench is a place where you can store those elements which are not in use in your current test plan but which can be later copy pasted in it. When you save JMeter file, the components which are present in workbench are not automatically saved. You must save them separately by right clicking and choose “Save as “option. <br>
+
+The reason of having workbench was that user could do some experiments and try out new scenarios. As we already know elements in workbench are not saved so a user can literally use anything and then throw away. But, there are some “Non-Test Components” which are only available in WorkBench. <br>
+
+They are listed here: <br> 
+
+- HTTP Mirror Server
+- HTTP(s) Test Script Recorder
+- Property Display
+- HTTP(s) Test Script Recorder is the most important Non-Test Element used in JMeter. It helps testers in recording the script and then configuring the load for each transaction.
+
+Jmeter only records the request sent to the server. Don’t get confused with “Record and Play” functionality of QTP/Selenium.  All the requests are recorded and testers can apply the desired load on them to see the behavior. <br> 
+
+f)Assertions <br>
+Till now, we have covered how JMeter hits the server and how the responses are displayed via listeners. To ensure that the response received is correct and as per expectation, we need to add assertions. Assertions are simply validations which we need to put on responses to compare the results. <br> 
+
+Below are the types of assertions commonly used: <br> 
+
+- Response Assertion
+- Duration Assertion
+- Size Assertion
+- XML Assertion
+- HTML Assertion
+
+Response Assertion:- <br>
+In Response Assertion, we can add our own pattern strings and then compare them with the responses received from a server. <br> 
+
+Duration Assertion:- <br>
+Duration Assertion is very important and validates that the server responded within a given amount of time. This can be used in scenarios where we need to sample 100 requests and ensure that every time response is received within the benchmarked limit.<br>
+
+g)Config Elements <br>
+Requests sent to the server can be further parameterize using some config elements which are executed before the actual request. A simple example of it could be reading values of a variable from a CSV file for which CSV Data Set Config is used.<br> 
+
+Below are some of the important config elements used in the performance testing of the web and mobile applications
+
+- CSV Data Set Config.
+- User Defined Variables
+- HTTPS Requests Default
+- HTTPS Cache Manager
+- HTTPS Cookie Manager
+
+CSV Data Set Config: <br>
+CSV data set config helps Jmeter in picking values of some parameters from a CSV file rather than passing different parameter in each separate request. For example, if we need to test login functionality with a different set of users and passwords, then we can create two columns in a CSV file and enter the values there so that JMeter can pick one for each request sent to the server. <br> 
+
+User Defined Variables:<br>
+It helps Jmeter to pick values from a pre-defined variable. For example, support that you need to create a test plan in which you need to add many HTTP requests on the same URL and there could be a scenario in which client plans to migrate it later to some different URL.So, to avoid updating URL in each request we can tell JMeter to pick the URL from a UDV (User Defined Variable) which can be later updated to handle all requests to updated URL<br>  
+
+HTTP Request Defaults:<br>
+This config element is very useful for specifying the default values of https requests.  To guide you more, take an example where we need to hit 50 different requests at google server.In this scenario, if we add an HTTP Request Default then we need not specify a server name, path or any other properties like port number, connection time out properties. Whatever is specified in the HTTP Request Default config element is inherited by all HTTP requests.<br>  
+
+HTTP Cache Manager and HTTP Cookie Manager are used in making JMeter behave as a real-time browser. HTTP Cache manager can clear cache after each request whereas the other one can manage the cookies settings.<br>
+ 
+### Day 49: 5 May 2022
+## DOUBT CLARIFICATION SESSION WITH INSTRUCTOR 
+ 
+### Day 50: 6 May 2022
+## JMETER MASTER-SLAVE CONFIGURATION 
+
+Assuming one master and one slave needs to be configured for distributed JMeter testing. Therefore, assuming following are the IP’s of the two machines. <br>
+Machine A — (Master Machine) IP = 172.16.222.26 <br>
+Machine B — (Slave Machine) IP = 172.16.222.87 <br>
+Make sure that both machines have same version of JMeter and JDK installed. Also, make sure that the environment system variable (e.g. “JMETER_HOME = D:\apache-jmeter-5.1.1”) is set on both the machine respectively. <br>
+1. On the machine A, go the JMeter bin directory. Open the “jmeter. Properties” file and provide salve (machine-B) IP as mentioned in the screen shot shown below: <br>
+2. Now, run the “create-rmi-keystore” batch file on the machine-A (master), located in Jmeter bin directory. Here, in the console window, we need to provide the values like name, company, country etc. <br>  
+For username and password, please provide following values: <br>
+name: rmi & password: changeit <br>
+3. On the completion of this step, the console window would closed and we would see “rmi_keystore” file being created in master machine-A JMeter bin directory. <br>
+4. Now copy this file (rmi_keystore file) and placed it on the Slave machine-B JMeter bin directory. <br>
+5. On the master machine-A, run the batch file “jmeter-server” as mentioned below: <br>
+After above step, go to machine-B (slave) > JMeter bin directory and run “jmeter-server” batch file. This console window would open and master slave connection would be established. <br>
+6. From the machine-A (master), we need to run the script mentioning “. jmx” script as well result logging location along with slave machine IP. Given below is an example command line run at the master machine-A. <br>
+
+jmeter -n -t “D:\JMeterScript.jmx” -l “D:\apache-jmeter-5.1.1\JmeterResultsCSV\results.csv” -R 172.16.222.87  <br> 
+
+PACING:  <br>
+Pacing in load testing refers to the time between the iterations of your test scenarios. This is unlike Think Time, which refers to the delay between actions or interactions inside iterations.By using pacing in your test, you will be able to regulate the rate of requests that hit your application and accurately achieve a desired load <br>
+
+### Day 51:  9 May 2022
+## Smoke Testing
+Smoke Testing is a software testing process that determines whether the deployed software build is stable or not. Smoke testing is a confirmation for QA team to proceed with further software testing. It consists of a minimal set of tests run on each build to test software functionalities. Smoke testing is also known as “Build Verification Testing” or “Confidence Testing.” <br>
+
+How to Do a Smoke Test <br>
+The process to implement an automated smoke test will vary depending on your application and the configuration of your build tool. But the basic steps of smoke testing should remain the same. <br>
+
+1. Prepare for Testing.  <br>
+After you've completed the build successfully — and before you test your application — you may need to perform setup steps. This might include copying files to the appropriate places, setting up database tables, installing licenses, or starting a server. <br>
+
+2. Get Your Test Files. <br>
+Your next step is to gather the files required for your smoke test. If you're using smoke testing software from Perforce, you would use the command line to fetch several smoke test files to the local drive. <br>
+
+3. Write a Script. <br>
+Using a single script for smoke testing will give you more flexibility (while keeping the build script static). Your smoke test should run run from your build tool. Once it has run, its report should be saved with the rest of the build files. If something fails, it needs to be reported to the developers (along with an output of the script). <br>
+If you're using smoke testing software from Perforce, your script would be similar to: "C:Program FilesSeapineQA Wizard ProQAWRunScript.exe" "SmokeTestSmokeTest.qawwspace" "SmokeTestSmokeTest.qawscript" /Reportfile "BuildCurrentReport.qawreport" <br>
+
+4. Clean Up. <br> 
+After the smoke test, you need to clean up. This might include stopping a server, deleting files, or emptying database tables. This could also be done before the initial setup step to ensure that the environment is clean before any tests are started.<br>
+ 
+h)Logic Controllers And Timers
+Logic controllers and timers help Jmeter control the flow of transactions. Timers ensure the delay in each thread if need to test any server. For Example, if we need FTP request to wait for 5 secs after HTTP request is completed, we can add timer there.
+
+Logic Controllers are used to defining the flow of requests which are sent to the server. It can also let you store requests for each module separately such as login and logout.
+
+### Day 52:  10 May 2022
+## LR AND JMETER REVISION SESSIONS
 
   
 

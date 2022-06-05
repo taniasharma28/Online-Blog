@@ -1895,6 +1895,24 @@ Logic Controllers are used to defining the flow of requests which are sent to th
 
 ### Day 52:  10 May 2022
 ## LR AND JMETER REVISION SESSIONS
+  
+### Day 53 - 58: 11 May 2022 - 18 May 2022
+## PROJECT DELIVERABLES
+  
+### DAY 59: 19 May 2022
+##  Coding Challenge1 (CC1)  JMETER
+  
+### DAY 60: 20 May 2022
+##  Coding Challenge2 (CC2)  JMETER
+  
+### DAY 61: 21 May 2022
+##  Coding Challenge3 (CC3)  JMETER
+  
+### DAY 62: 22 May 2022
+##  Coding Challenge4 (CC4)  JMETER
+  
+### DAY 63: 25 May 2022
+##  Integrated Capability Test(ICT)  JMETER
 
   
 

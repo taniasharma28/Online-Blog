@@ -1125,7 +1125,7 @@ web_reg_save_param(): As already seen, this is a boundary based correlation func
 ## DOUBT CLARIFICATION SESSIONS WITH INSTRUCTOR
 
 ### Day 32: 8 April 2022
-## BASIC OF CONTROLLER
+## BASICS OF CONTROLLER
 What is Controller? <br>
 Controller, as the name suggests, is a program to “control” overall load test. It is responsible for helping you run your performance test design using the VUGen scripts you’ve already created. It lets you over-ride run-time settings, enable or disable think time, rendezvous points, adds load generators and controls the number of users each generator can simulate. It automatically creates a dump of execution results, gives you a live view of “current state” of load test running. <br>  
 
@@ -1186,7 +1186,7 @@ The key differences in Goal Oriented Scenario, as the name suggests, is to creat
 While most of the interface is pretty much similar to Manual Scenario, certain screen appears differently, although perform the same actions. For example, to add a VUser Group or a VUser Script, click on the How to use Controller in LoadRunner ADD SCRIPT button. <br> 
 
 ### Day 33: 6 April 2022
-## BASIC OF ANALYSIS
+## BASICS OF ANALYSIS
 What is Analysis? <br>
 LoadRunner Analysis is a software that analyses executed tests. LoadRunner Analysis takes the dump in that has been created by the controller during testing. The dump contains raw data that gets processed by LoadRunner Analysis to create different tables and diagrams. <br>  
 
